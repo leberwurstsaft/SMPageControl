@@ -498,16 +498,16 @@ static SMPageControlStyleDefaults _defaultStyleForSystemVersion;
             return;
         }
     }
-    
-    CGSize size = [self sizeForNumberOfPages:self.numberOfPages];
-    CGFloat left = [self _leftOffset];
-    CGFloat middle = left + (size.width / 2.0f);
-    if (point.x < middle) {
-        [self setCurrentPage:self.currentPage - 1 sendEvent:YES canDefer:YES];
-    } else {
-        [self setCurrentPage:self.currentPage + 1 sendEvent:YES canDefer:YES];
+    else {
+        CGSize size = [self sizeForNumberOfPages:self.numberOfPages];
+        CGFloat left = [self _leftOffset];
+        CGFloat middle = left + (size.width / 2.0f);
+        if (point.x < middle) {
+            [self setCurrentPage:self.currentPage - 1 sendEvent:YES canDefer:YES];
+        } else {
+            [self setCurrentPage:self.currentPage + 1 sendEvent:YES canDefer:YES];
+        }
     }
-    
 }
 
 #pragma mark - Accessors
